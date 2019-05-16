@@ -1,0 +1,96 @@
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <title> Test Grid system </title>
+    <style>
+        @import 'https://fonts.googleapis.com/css?family=Comfortaa:300,700|Bungee+Shade|Josefin+Sans:400';
+
+        html {
+            background-color: #eee
+        }
+
+        html,
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            counter-reset: section;
+        }
+
+        .wrapper {
+            width: 100%;
+            padding: 30px;
+            box-sizing: border-box;
+        }
+
+        .box {
+            border-radius: 3px;
+            background-color: #ffffff;
+            box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.06);
+            padding: 18px 20px;
+        }
+
+        .fashion-hero>.box {
+            height: 200px;
+            margin-bottom: 30px;
+        }
+
+        .row {
+            display: grid;
+            grid-template-columns: repeat(6, 1fr);
+            grid-auto-rows: 238px;
+            grid-gap: 30px;
+        }
+
+        .row>.box::before {
+            counter-increment: section 2;
+            content: counter(section);
+            font-family: Comfortaa, sans-serif;
+            font-weight: 700;
+        }
+
+        .tall-span{
+            grid-row: span 2;
+        }
+
+        .wide-span{
+            grid-column: span 2;
+        }
+
+    </style>
+</head>
+
+<body>
+    <div class="wrapper">
+        <!-- Hero Section-->
+        <div class="hero fashion-hero">
+            <div class="box"></div>
+        </div>
+
+        <!-- Grid Section -->
+        <div class="row">
+            <div class="box tall-span"></div>
+            <div class="box"></div>
+            <div class="box"></div>
+            <div class="box"></div>
+            <div class="box wide-span"></div>
+            <div class="box"></div>
+            <div class="box "></div>
+            <div class="box"></div>
+            <div class="box"></div>
+            <div class="box"></div>
+            <div class="box"></div>
+            <div class="box"></div>
+            <div class="box"></div>
+            <div class="box"></div>
+            <div class="box"></div>
+            <div class="box"></div>
+            <div class="box"></div>
+        </div>
+    </div>
+</body>
+
+</html>
